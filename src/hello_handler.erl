@@ -12,10 +12,10 @@ init(_, Req, _Opts) ->
 	{ok, Req, #state{}}.
 
 handle(Req, State=#state{}) ->
-	Msg = os:cmd("fortune | cowsay"),
+	%Msg = os:cmd("fortune | cowsay"),
 	{ok, Req2} = cowboy_req:reply(200, 
 	[{<<"content-type">>, <<"text/plain">>}],
-        Msg,
+        <<"Hello Erlang!">>,
 	Req),
 	{ok, Req2, State}.
 

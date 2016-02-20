@@ -16,6 +16,12 @@
 %%====================================================================
 
 start(_StartType, _StartArgs) ->
+    Dispatch = cowboy_router:compile([
+        {'_', [{"/", hello_handler, []}]}
+    ]),
+    {ok, _} = cowboy:start_http(my_http_listener, 100, 
+        [{port, os:getenv("PORT")}], [{env, [{dispatch, Dispatch}]}]
+    ),
     erlang18starter_sup:start_link().
 
 %%--------------------------------------------------------------------

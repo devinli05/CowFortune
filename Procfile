@@ -1,1 +1,1 @@
-web: ./_rel/erlang18starter_release/bin/erlang18starter_release console
+web: erl -pa ebin deps/*/ebin -noshell -noinput -s erlang18starter

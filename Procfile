@@ -1,1 +1,1 @@
-web: ./_rel/erlang18starter_release/bin/erlang18starter_release start
+web: ./_rel/erlang18starter_release/bin/erlang18starter_release console &
